@@ -79,7 +79,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"username\": \"test\",\n\t\"password\": \"test\"\n}"
+					"raw": "{\n\t\"username\": \"user\",\n\t\"password\": \"user\"\n}"
 				},
 				"url": {
 					"raw": "localhost:4000/users/authenticate",
@@ -90,6 +90,39 @@
 					"path": [
 						"users",
 						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Id (Protected)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:4000/users/2",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"users",
+						"2"
 					]
 				}
 			},
